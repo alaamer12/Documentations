@@ -1,0 +1,62 @@
+// async functions 
+
+
+what is the difference between async functions and non async functions 
+ChatGPT
+The main difference between async functions and non-async functions lies in their handling of asynchronous operations.
+
+Async functions, marked by the async keyword, allow the use of the await keyword inside them. This enables asynchronous code execution, making it possible to pause the function while waiting for promises to resolve. Async functions return a promise, and their execution doesn't block the event loop.
+
+Non-async functions, on the other hand, operate synchronously. They don't support the use of await or handle promises directly. If there are asynchronous operations within a non-async function, they would be handled traditionally using callbacks or promises.
+
+In summary, async functions are designed for asynchronous programming, providing a cleaner way to work with asynchronous code compared to traditional callback-based or promise-based approaches.
+
+
+
+
+User
+do u mean in async func it waits till the the resolved return then it is excuted or what and do it blocks any content and when it is excuted does it is excuted in order and does it is excuted first of all things
+ChatGPT
+In an async function, when encountering an await expression, the function does not block and wait for the resolution of the promise. Instead, it allows other code to execute in the meantime. The function is effectively paused at the await point, and once the promise is resolved, the function resumes from that point.
+
+Async functions do not block the execution of other code. They work cooperatively with the event loop, allowing non-blocking execution of asynchronous operations.
+
+Regarding the order of execution within an async function, code is generally executed in the order it appears, just like in a synchronous function. However, when an await expression is encountered, the function yields control until the awaited promise is resolved. Other tasks can be executed during this time.
+
+It's important to note that while async functions provide a way to write asynchronous code in a more synchronous style, they don't guarantee the order of execution for every line of code within the function, especially when awaiting multiple promises.
+
+Async functions are often used to handle asynchronous tasks such as fetching data from a server, reading files, or waiting for a timer to complete, without blocking the main thread of execution.
+
+
+
+
+User
+so does it keeps the code executing and waits in same time while the promise resolving and once it resolved it is executed
+ChatGPT
+Yes, that's correct. When an async function encounters an await expression, it essentially pauses its own execution and allows other code to run. The event loop can continue processing other tasks while waiting for the promise associated with the await to resolve.
+
+Once the promise is resolved (or rejected), the async function resumes its execution from the point where it encountered the await expression. This allows for non-blocking asynchronous code, where the program can perform other tasks while waiting for asynchronous operations to complete.
+
+
+
+
+User
+but doesnt mean it works in sync with executing code so is it more suitable to name it `sync` ?
+ChatGPT
+The term "async" in the context of JavaScript doesn't refer to synchronous execution; rather, it stands for "asynchronous." The key feature of async functions is that they allow asynchronous operations to be written in a style that looks and behaves more like synchronous code.
+
+The term "async" is used because the functions themselves are capable of handling asynchronous operations using the await keyword, making the code appear more synchronous in structure. However, it's important to understand that async functions do not block the entire program during asynchronous operations, and they enable non-blocking behavior.
+
+In contrast, a "sync" function in the JavaScript context typically refers to a synchronous function that executes sequentially, blocking further code execution until it completes. So, naming an async function as sync would be misleading, as it doesn't represent the same behavior as a synchronous function.
+
+In summary, the use of "async" in the naming convention reflects the capability of these functions to handle asynchronous tasks without blocking the overall program execution.
+
+
+
+
+User
+yes and this what im talking about `The key feature of async functions is that they allow asynchronous operations to be written in a style that looks and behaves more like synchronous code.`
+ChatGPT
+Absolutely, and that is indeed a key feature and advantage of async functions. They provide a more readable and synchronous-looking way to handle asynchronous operations, making the code easier to reason about, write, and maintain. This is particularly valuable in scenarios where you have to deal with multiple asynchronous operations or sequences of asynchronous tasks.
+
+By using async and await, you can structure your code in a way that resembles traditional synchronous programming, even though it's running asynchronously under the hood. This can lead to more maintainable and comprehensible code, especially when dealing with complex asynchronous workflows.

@@ -1,0 +1,40 @@
+make dpi in react native 
+
+import React from 'react';
+import { View } from 'react-native';
+import { PixelRatio, Dimensions } from 'react-native';
+
+const App = () => {
+  // Get the device pixel density
+  const pixelDensity = PixelRatio.get();
+
+  // Function to convert dp to pixels based on device pixel density, screen dimensions, and a scale factor
+  const dpToPixels = (dp, scaleFactor = 1) => {
+    const screenWidthInDp = Dimensions.get('screen').width / pixelDensity;
+    const screenHeightInDp = Dimensions.get('screen').height / pixelDensity;
+    const maxScreenSizeInDp = Math.max(screenWidthInDp, screenHeightInDp);
+
+    // Adjust the scale factor as needed
+    const adjustedScaleFactor = Math.max(scaleFactor, 1);
+
+    return PixelRatio.roundToNearestPixel((dp * maxScreenSizeInDp * adjustedScaleFactor) / 160);
+  };
+
+  const borderRadiusInDp = 4;
+  const borderRadiusInPixels = dpToPixels(borderRadiusInDp, 2); // You can adjust the scale factor as needed
+
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View
+        style={{
+          width: 100,
+          height: 100,
+          backgroundColor: 'blue',
+          borderRadius: borderRadiusInPixels,
+        }}
+      />
+    </View>
+  );
+};
+
+export default App;

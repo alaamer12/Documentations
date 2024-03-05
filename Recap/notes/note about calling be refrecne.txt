@@ -1,0 +1,91 @@
+to know when to call be refernce and when by value just imagine the variables are constant [this is the key]
+call by value [like constant]
+#include <iostream>
+
+// Function to swap two numbers using call by reference
+void swapByReference(int& a, int& b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+int main() {
+    int x = 10;
+    int y = 20;
+
+    std::cout << "Before swap: x = " << x << ", y = " << y << std::endl;
+    swapByReference(x, y);
+    std::cout << "After swap: x = " << x << ", y = " << y << std::endl;
+
+    return 0;
+}
+Before swap: x = 10, y = 20
+After swap: x = 20, y = 10
+
+if by value 
+#include <iostream>
+
+// Function to swap two numbers using call by reference
+void swapByReference(int a, int b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+int main() {
+    int x = 10;
+    int y = 20;
+
+    std::cout << "Before swap: x = " << x << ", y = " << y << std::endl;
+    swapByReference(x, y);
+    std::cout << "After swap: x = " << x << ", y = " << y << std::endl;
+
+    return 0;
+}
+Before swap: x = 20, y = 10
+After swap: x = 20, y = 10
+
+
+also look at this 
+
+#include <iostream>
+
+// Function to increment a number using call by value
+int incrementByValue(int num) {
+    num += 1;
+    return num;
+}
+
+int main() {
+    int num = 5;
+
+    std::cout << "Before increment: num = " << num << std::endl;
+    int incrementedNum = incrementByValue(num);
+    std::cout << "After increment: num = " << num << ", incrementedNum = " << incrementedNum << std::endl;
+
+    return 0;
+}
+Before increment: num = 5
+After increment: num = 5, incrementedNum = 6
+
+and when we make it by refernce 
+
+#include <iostream>
+
+// Function to increment a number using call by value
+int incrementByValue(int num) {
+    num += 1;
+    return num;
+}
+
+int main() {
+    int num = 5;
+
+    std::cout << "Before increment: num = " << num << std::endl;
+    int incrementedNum = incrementByValue(num);
+    std::cout << "After increment: num = " << num << ", incrementedNum = " << incrementedNum << std::endl;
+
+    return 0;
+}
+Before increment: num = 5
+After increment: num = 6, incrementedNum = 6

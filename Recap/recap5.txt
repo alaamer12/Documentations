@@ -1,0 +1,156 @@
+in inhertiance the dervited class have to use the constructor of the base class no matter what
+u have to init  hte base constructor in a constrctor of dervited class
+
+class Base {
+public:
+    Base(int value) {
+        // Base class constructor with one parameter
+        // Initialize base class members
+    }
+};
+
+class Derived : public Base {
+public:
+    Derived() : Base(0) {
+        // Derived class constructor with no arguments
+        // Call the base class constructor with a default argument
+    }
+};
+
+int main() {
+    Derived d;  // Creating an object of the derived class without arguments
+
+    return 0;
+}
+
+
+
+
+we can use public , protected , private in struct as well as in class
+
+struct py defualt is public
+
+when u creating an object of any class this happens if it isnt exist
+class A{};
+
+In C++, the compiler provides default implementations for certain member functions if they are not explicitly defined by the programmer. These functions are known as the special member functions.
+
+The default implementations provided by the compiler are:
+
+a) Zero-argument Constructor (Default Constructor): If no constructor is defined for a class, the compiler automatically generates a zero-argument constructor that initializes the object.
+
+b) Destructor: If no destructor is defined for a class, the compiler automatically generates a destructor that cleans up the resources held by the object when it goes out of scope.
+
+c) Copy Constructor: If no copy constructor is defined for a class, the compiler automatically generates a copy constructor that performs a member-wise copy of the object's data members.
+
+However, the compiler does not automatically generate a "Copy Destructor." 
+There is no such concept in C++. It might be a typographical error or a misunderstanding of the special member functions. 
+The correct term is the "Copy Assignment Operator," which is responsible for assigning one object to another. If no copy assignment operator is defined, 
+the compiler generates a default one that performs a member-wise assignment.
+
+
+A copy constructor is a special constructor in C++ that initializes an object using another object of the same class. It is used to create a copy of an existing object. The copy constructor takes a reference to an object of the same class as a parameter.
+
+The syntax for a copy constructor is:
+
+cpp
+Copy code
+ClassName(const ClassName& other)
+{
+    // Copy the data members of 'other' to the current object
+    // Perform any additional initialization if needed
+}
+The copy constructor is called in several situations, such as when an object is passed by value to a function, when an object is returned by value from a function, or when an object is explicitly or implicitly copied using the assignment operator.
+
+By default, if a copy constructor is not explicitly defined by the programmer, the compiler generates a copy constructor that performs a member-wise copy of the object's data members.
+
+It is important to define a copy constructor properly, especially when dealing with dynamically allocated memory or resources. In some cases, a deep copy might be required to ensure independent copies of dynamically allocated data.
+
+
+
+
+there is no friend constructor
+
+
+
+
+do u remmber this
+
+When overloading the ___Postfix_______ operator, its function must
+have a dummy parameter.
+
+When overloading the postfix increment (++) or decrement (--) operator
+, the function must have a dummy parameter of type int inside the parentheses. This dummy parameter 
+is not used in the function implementation but is required to differentiate the postfix version of the operator from the prefix version. 
+The postfix increment/decrement operators are typically overloaded as member functions of a class and take no arguments, 
+hence the need for the dummy parameter.
+
+Certainly! Here's an example of overloading the postfix increment (++) operator:
+
+cpp
+Copy code
+#include <iostream>
+
+class Counter {
+private:
+    int count;
+
+public:
+    Counter(int initialCount = 0) : count(initialCount) {}
+
+    // Overloading the postfix increment operator as a member function
+    Counter operator++(int) {
+        Counter temp(count);  // Create a temporary object with the current count
+        count++;             // Increment the count
+        return temp;         // Return the temporary object (pre-incremented value)
+    }
+
+    int getCount() const {
+        return count;
+    }
+};
+
+int main() {
+    Counter c(5);
+    std::cout << "Initial count: " << c.getCount() << std::endl;
+
+    Counter c2 = c++;  // Using the postfix increment operator
+
+    std::cout << "Post-incremented count: " << c.getCount() << std::endl;
+    std::cout << "Value returned by postfix increment: " << c2.getCount() << std::endl;
+
+    return 0;
+}
+Output:
+
+yaml
+Copy code
+Initial count: 5
+Post-incremented count: 6
+Value returned by postfix increment: 5
+In this example, 
+the Counter class overloads the postfix increment operator ++ as a member function. It creates a temporary Counter object with the current count value, 
+increments the count, and returns the temporary object. 
+The value returned by the postfix increment operation is the original value before the increment.
+
+
+
+
+
+note 
+suppose a class A {};
+A a , b ,c ;
+a then b then c will be created [constructed] but
+c , then b then a will be detroyed [destrcuted]
+
+ Object declared in main() function:
+Can’t be used by any other function
+
+
+
+
+
+
+
+
+the object can be passed as copy , value , refrence

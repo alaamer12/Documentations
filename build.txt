@@ -1,0 +1,78 @@
+this file will describe the common steps we do for building
+
+websites:
+	Desktop:
+		to build websites into binary files u would usually do 
+		`npx electron-packager . --platform=win32 --arch=x64 --icon=icon.ico`
+		
+		Note: this command build for windows also i havent tried it for linux, or Mac
+		
+		also usually to test how it would look, u would do `electron .` or `npx electron .`
+
+	Mobile:
+		actually i havent tried before so i dont have any knowledge about it
+		but shall i leave some resources for future
+		common tools: Ionic, Cordava, Capcitor, ...etc.
+	Other:
+		usually this would be to use `gulpjs` which would help in this
+		distribution processes of websites that would involve minification, parsing, renaming, ...etc.
+		
+		also `tsc` can be used if pure typescript, but also gulpjs can do it as well
+python:
+	Desktop:
+		usually u would use the third part services `pyinstaller`
+		with a command similar to `pyinstaller --onefile main.py`
+		
+		there is other libs but i think this is the best, 
+		also i have not tested the other libs
+		
+		also pyinstaller is capable to distribute to different binary formats
+		
+	Mobile:
+		in years ago there were two options only [BeeWare, Kivy]
+		and i think both of them are using the `buildozer` which is like the bundler
+		to bundle it to machine code, anyway we tried to make applications with both of them
+		but we failed becuase there was an bug we encouter when we use buildozer,
+		but now we know the bug and i think we can easily fix
+		
+		now there is new tech `Flet` which is wrapper about flutter, to make u make
+		desktop and mobile application with same source code with ur favourite language
+		but now it is only supporting python also it is at beta state
+		
+		so till it reaches the stable state we wont talk further
+		
+	Package:
+		You can package python project into `PyPi` by
+		`pip install setuptools wheel`
+		then
+		`python setup.py sdist bdist_wheel`
+		it will create two directories [build, dist]
+		the package would be in `dist` archived as .tar file
+		
+C++/C#/C:
+	Desktop:
+		actually i dont know how to build it manually, the only way i know is to build them
+		throw Visual studio
+	
+	Mobile:
+		also u can build mobile application easily and rapidly in C# with Visual code
+		but it is more complex when it comes to C++ or C
+		actually i still dont know if it is straightforward now or not
+		but as i remember it is not straightforward
+		
+ReactNative[Expo]:
+	Desktop:
+		it is possible to distribute it to desktop, but i havent tried and i dont 
+		think i will becuase it is complex process
+	Mobile:
+	i havent used react-native but i have used Expo a lot
+	and there are two ways to build application with expo 
+	with expo command [locally]: expo build --profile production --platform android
+	with eas command [remotely]: eas build --profile production --platform android
+	
+	u can also choose the profile u want
+	
+	Website:
+		u can build also a websites with react native and expo
+		the command is `expo export`
+		but u have to make some configurations first

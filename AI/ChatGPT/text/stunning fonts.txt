@@ -1,0 +1,20 @@
+Playfair Display
+Roboto Slab
+Lato
+Raleway
+Open Sans
+Montserrat
+Josefin Sans
+Poppins
+Oswald
+Merriweather
+Quicksand
+Bebas Neue
+Pacifico
+Lobster
+Source Sans Pro
+Nunito Sans
+Barlow
+Comfortaa
+Muli
+Fira Sans

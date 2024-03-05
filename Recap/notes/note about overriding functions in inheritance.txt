@@ -1,0 +1,70 @@
+u cant in inheritance do this 
+#include <iostream>
+using namespace std;
+
+class Base {
+public:
+    void printMessage(string message) {
+        std::cout << "This is the Base class: " << message << std::endl;
+    }
+};
+
+class Derived : public Base {
+public:
+    void printMessage() {
+        std::cout << "This is the Derived class" << std::endl;
+    }
+};
+
+int main() {
+    Derived derivedObj;
+    derivedObj.printMessage("Message");
+    // Output: "This is the Base class: Calling Base class printMessage()"
+                               //         "This is the Derived class"
+    return 0;
+}
+
+u cant do it becuase even there is two methods functions have same name came one of them came from inheritance it will only be used
+or valid the derived method so this one ` void printMessage() {
+        std::cout << "This is the Derived class" << std::endl;
+    }` is the one which is gonna work
+to use both functions u have to to something like this 
+
+ void printMessage() {
+        std::cout << "This is the Derived class" << std::endl;
+    }
+
+or u can use some keywords like `override` and `virtual`
+
+like this 
+
+#include <iostream>
+
+class Base {
+public:
+    virtual void printMessage() {
+        std::cout << "This is the Base class" << std::endl;
+    }
+};
+
+class Derived : public Base {
+public:
+    void printMessage() override {
+        std::cout << "This is the Derived class" << std::endl;
+    }
+};
+
+int main() {
+    Base baseObj;
+    baseObj.printMessage();  // Output: "This is the Base class"
+
+    Derived derivedObj;
+    derivedObj.printMessage();  // Output: "This is the Derived class"
+
+    Base* basePtr = new Derived();
+    basePtr->printMessage();  // Output: "This is the Derived class"
+
+    delete basePtr;
+
+    return 0;
+}

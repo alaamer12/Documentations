@@ -1,0 +1,19 @@
+can i overload any operator , operator like '~' ?
+ChatGPT
+In C++, not all operators can be overloaded. The set of operators that can be overloaded is fixed by the C++ language and does not include operators like the logical NOT operator (!) or the bitwise NOT operator (~).
+
+The following operators can be overloaded in C++:
+
+Arithmetic operators: +, -, *, /, %
+Assignment operators: =, +=, -=, *=, /=, %=
+Increment and decrement operators: ++, --
+Comparison operators: ==, !=, <, >, <=, >=
+Logical operators: &&, ||
+Bitwise operators: &, |, ^, <<, >>
+Subscript operator: []
+Function call operator: ()
+Member access operators: ->, ->*
+Conversion operators
+As you can see, the logical NOT operator (!) and the bitwise NOT operator (~) are not in the list of overloadable operators.
+
+So, in C++, you cannot directly overload the ~ operator.

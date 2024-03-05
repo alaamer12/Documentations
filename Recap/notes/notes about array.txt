@@ -1,0 +1,25 @@
+even if array is a pointer u have to do this with it 
+    int arr1[1]={};
+    int arr2[2]={};
+    int arr3[3]{};
+int *arr[3]={arr1,arr2,arr3};
+
+u cant also do this 
+    int num = 5;
+    int arr1[1]={4};
+    int arr2[2]={};
+    int arr3[3]{};
+int *arr[3]={arr1[0],arr2,arr3};
+
+u can do this 
+    int arr1[1]={4};
+    int arr2[2]={};
+    int arr3[3]{};
+int *arr[3]={arr1,arr2,arr3};
+std::cout<< arr<<std::endl;
+std::cout<< arr[0]<<std::endl;
+std::cout<< arr[0][0]<<std::endl;
+
+0x7ffd7ceeb940
+0x7ffd7ceeb974
+4

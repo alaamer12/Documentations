@@ -1,0 +1,7 @@
+﻿Usage Report for All Users Combined
+              Month   Sent Received Total
+=================== ====== ======== =====
+2/2/2024 - 3/1/2024 2.9 GB    47 GB 50 GB
+1/2/2024 - 2/1/2024 1.1 GB    23 GB 24 GB
+              Total 4.0 GB    70 GB 74 GB => 74GB
+========================================

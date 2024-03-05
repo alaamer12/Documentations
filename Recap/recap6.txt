@@ -1,0 +1,10 @@
+it looks like sometimes react considered lib or framework but moslty a lib moreover react works with .js or .jsx it is said it about compiler
+or something like that  [or may jsx may be preferred in backend and servers]
+anywhere 
+
+what im surprised at is that react have frameworks for itself
+so u can imagine a framework for framework and so on , types of frameworks like for servers , statics and dynmaics and so on
+i still dont know why to use framework with react howeve it is powerful 
+
+
+maybe two famous frameworks are next , and gatsby

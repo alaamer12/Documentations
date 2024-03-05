@@ -1,0 +1,36 @@
+The process module in Node.js provides access to various information about the current Node.js process and allows interaction with the operating system. Here are some commonly used methods and properties of the process module:
+
+process.argv: An array that contains the command-line arguments passed to the script. The first element is the path to Node.js, the second element is the path to the script, and the subsequent elements are the command-line arguments.
+
+process.env: An object containing the user environment. You can use this to access environment variables.
+
+process.exit([code]): Exits the current process with an optional exit code. If no code is provided, it exits with a status code of 0, indicating successful execution.
+
+process.cwd(): Returns the current working directory of the process.
+
+process.on(event, callback): Listens for specific events in the process. For example, you can use process.on('exit', callback) to execute code just before the process exits.
+
+process.nextTick(callback[, ...args]): Schedules a callback to be invoked in the next iteration of the event loop.
+
+process.stdout: A writable stream representing the process's standard output. You can use this to write data to the console.
+
+process.stderr: A writable stream representing the process's standard error output.
+
+process.stdin: A readable stream representing the process's standard input.
+
+process.pid: The process ID of the current process.
+
+process.platform: A string identifying the operating system platform.
+
+process.arch: A string identifying the processor architecture.
+
+process.memoryUsage(): Returns an object describing the memory usage of the Node.js process.
+
+process.uptime(): Returns the number of seconds the Node.js process has been running.
+
+These are just some of the methods and properties available in the process module. You can refer to the official Node.js documentation for a comprehensive list and detailed descriptions: Node.js - process.
+
+
+
+
+

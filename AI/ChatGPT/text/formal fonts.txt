@@ -1,0 +1,20 @@
+Times New Roman
+Georgia
+Garamond
+Palatino
+Baskerville
+Helvetica
+Arial
+Cambria
+Didot
+Bodoni
+Century Schoolbook
+Century
+Franklin Gothic
+Futura
+Optima
+Sabon
+ITC Stone Serif
+Univers
+Avenir
+Proxima Nova

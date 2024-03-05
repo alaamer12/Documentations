@@ -1,0 +1,52 @@
+u are already when to use this operator `->` is to access something
+is a pointer with a pointer or something like that but btw u are using it
+
+so this is new operator `->*` and this is different operator where the
+`->` is can be used only for varibales and cant be used for memeber functions
+so this operator `->*` is used for functions but it can only target one function 
+by invokation
+
+and there is simailar operator to it , it is `.*` but u need to know 
+both need invoked function but they are kinda different
+and ofc i think that this `->*` operatoris better but btw i dont think we will use one of them
+any day.
+
+so look at this code :
+
+#include <iostream>
+using namespace std;
+
+struct Person {
+    int sayHello() {
+        cout << "Hello, I'm a person!" << endl;
+        return 5;
+    }
+};
+
+int main() {
+    Person person;
+    Person* personPtr = &person;
+    int (Person::*funcPtr)() = &Person::sayHello;// invokation function
+
+    // Call the member function through the pointer-to-member using ->*
+    (personPtr->*funcPtr)();/*pointer used*/  // First Output: Hello, I'm a person!
+    (person.*funcPtr)()/*pointer used*/
+    ;      // Second Output: Hello, I'm a person!
+    person.sayHello();  /*no pointer used*/
+
+    return 0;
+}
+
+then lets break down what we need from this code 
+first thing u have to invokation always if u want to access memeber function by a pointer
+secound thing u have to ways to delcare pointer to access
+as in  (personPtr->*funcPtr)(); and person.*funcPtr)();
+both are pointer but they used different operator as declaration
+and more over u cant delete those poineter becuase they are doing in stack and u cant
+delete something from a stack 
+it is cleared  (personPtr->*funcPtr)(); that here we used arrow operator 
+becuase it is like pointer to a pointer where it is real pointer 
+ while 		person.*funcPtr)() 	looks like a fake pointer but both are pointers
+ 
+ and u can see the invokation function has only one rule so this is how to access memeber functions by pointers
+ 

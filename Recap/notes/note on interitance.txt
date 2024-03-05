@@ -1,0 +1,7 @@
+u cant inherit from foreward class [pre-declaration]
+u cant 
+class A;
+class B : public A; [wrong]
+class B : public A{}; [wrong]
+class A{};
+class B : pubic A{}; [correct]

@@ -1,0 +1,18 @@
+class BaseClass {
+    int baseData;
+
+public:
+    BaseClass(int data) : baseData(data) {
+        // Base class constructor body
+    }
+};
+
+class DerivedClass : public BaseClass {
+    int derivedData;
+
+public:
+    DerivedClass(int baseData, int derivedData)
+        : BaseClass(baseData), derivedData(derivedData) {
+        // Derived class constructor body
+    }
+};

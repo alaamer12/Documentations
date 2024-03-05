@@ -1,0 +1,3 @@
+https://verpex.com/blog/website-tips/a-text-reveal-animation-using-css?fbclid=IwAR3un9ocdDnE1HowzAyNdQQ81PW-Ibhmy-ZAgg662lhctyxw6pFtMW0WKYk
+
+this is a link of code for text reveal  usin code pen u can check it when u want

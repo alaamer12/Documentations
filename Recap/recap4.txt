@@ -1,0 +1,43 @@
+we today learnt something called list initialization which it is asscaited with constructor
+
+class BaseClass {
+    int baseData;
+
+public:
+    BaseClass(int data) : baseData(data) {
+        // Base class constructor body
+    }
+
+    void displayData() {
+        std::cout << "baseData: " << baseData << std::endl;
+    }
+};
+
+int main() {
+    BaseClass obj(42);
+    obj.displayData();  // Output: baseData: 42
+
+    return 0;
+}
+
+this equals this 
+BaseClass(int data) : baseData(data) {
+        // Base class constructor body
+    }`
+instead of this ` BaseClass(int data) :{
+        baseData = data ;
+    }`
+but the defernce that list init is more effiecnt specially when there is little private variables and const and refrences and dependant variables
+becuase it inits at creation time not at reading the scope
+so im trying to say it creates while it is created not after created then it goes to look at the scope
+then we can conclude if there is time delay in the scope the 'list init' isnt affected
+
+
+
+
+
+note we use keyowrd 'virtual' when we want to use the same function with same name [can be differnet of parameter and return value
+but not return type
+]
+so if class A{//has a function called virtual int area(){return 0;}
+} means every time u are going to use this function in derived classes it have to return int 

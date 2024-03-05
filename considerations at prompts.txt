@@ -1,0 +1,4 @@
+Make full comprehensive comparison about  <> alongside with those aspects: scalability, suitability ,CI/CD integration, DX, feedback, community, popularity, extensibility, usability, learning curve, known issues, pros, cons, unique features , considerations , is opinionated, integratable with other tools , productivity, pricing, limited to what?, when and where and which scenario to use , why to use it?.
+
+
+rephrase this text, fix grammar, correct incorrect sentence, build file structure, spin words, highlight bullets, enhance readability, describe sentences, provide additional details, give examples, construct sentences, warm tune, in markdown code.

@@ -1,0 +1,25 @@
+what is the difference between async functions and non async functions 
+ChatGPT
+The main difference between async functions and non-async functions lies in their handling of asynchronous operations.
+
+Async functions, marked by the async keyword, allow the use of the await keyword inside them. This enables asynchronous code execution, making it possible to pause the function while waiting for promises to resolve. Async functions return a promise, and their execution doesn't block the event loop.
+
+Non-async functions, on the other hand, operate synchronously. They don't support the use of await or handle promises directly. If there are asynchronous operations within a non-async function, they would be handled traditionally using callbacks or promises.
+
+In summary, async functions are designed for asynchronous programming, providing a cleaner way to work with asynchronous code compared to traditional callback-based or promise-based approaches.
+
+
+
+
+User
+do u mean in async func it waits till the the resolved return then it is excuted or what and do it blocks any content and when it is excuted does it is excuted in order and does it is excuted first of all things
+ChatGPT
+In an async function, when encountering an await expression, the function does not block and wait for the resolution of the promise. Instead, it allows other code to execute in the meantime. The function is effectively paused at the await point, and once the promise is resolved, the function resumes from that point.
+
+Async functions do not block the execution of other code. They work cooperatively with the event loop, allowing non-blocking execution of asynchronous operations.
+
+Regarding the order of execution within an async function, code is generally executed in the order it appears, just like in a synchronous function. However, when an await expression is encountered, the function yields control until the awaited promise is resolved. Other tasks can be executed during this time.
+
+It's important to note that while async functions provide a way to write asynchronous code in a more synchronous style, they don't guarantee the order of execution for every line of code within the function, especially when awaiting multiple promises.
+
+Async functions are often used to handle asynchronous tasks such as fetching data from a server, reading files, or waiting for a timer to complete, without blocking the main thread of execution.

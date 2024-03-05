@@ -1,0 +1,4 @@
+data binding : is the way the backend and front end connect
+together to control the ui or the view as the way u wnt 
+data binding has two types : one way a, and two way
+one way : means the data flows from one direction and i is from backend to front end
